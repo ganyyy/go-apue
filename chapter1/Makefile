@@ -1,11 +1,6 @@
-CC = go build
-FLAG = -x
-
-.PHONY: ls getcputc
+include ../Makefile
 
 ls: ls.go
-	$(CC) -o $@ $(FLAG) $^
 getcputc: getcputc.go
-	$(CC) -o $@ $(FLAG) $^
-clean:
-	@ls . | grep -v go | grep -v Makefile | xargs rm -f
+shell1: shell1.go
+shell2: shell2.go
