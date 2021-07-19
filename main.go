@@ -5,6 +5,7 @@ package main
 import (
 	"fmt"
 	"reflect"
+	"unsafe"
 )
 
 type MyStruct struct {
@@ -15,9 +16,7 @@ func (m *MyStruct) String() string {
 }
 
 func main() {
-	fmt.Println(&MyStruct{})
-	var s = -1
-	var m = make(map[int]bool, s)
+	fmt.Println((*MyStruct)(unsafe.Pointer(nil)).String())
 
-	fmt.Println(m[0])
+	fmt.Println(reflect.TypeOf(nil).Elem().Name())
 }
