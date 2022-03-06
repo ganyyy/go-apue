@@ -10,4 +10,4 @@ CFLAGS =
 	@echo "$@ < $^"
 	@$(CC) -o $(basename $@) $(CFLAGS) $^
 clean:
-	@ls . | grep -v go | grep -v Makefile | xargs rm -f
+	@find . -type f | grep -v vscode | grep -v go | grep -v Makefile | grep -v cpp | grep -v git | xargs rm -f
